@@ -1,0 +1,37 @@
+<template class="task-template">
+  <section id="create-section" class="section js-section u-category-project">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-menu"></use></svg>
+          Création d'un projet
+        </h1>
+
+        <h3>Une nouvelle hierarchie de dossiers sera créée.</h3>
+
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <div>
+          <p><label for="project-name"><b>Nom du projet :</b></label></p>
+          <input class="demo-input" id="project-name" aria-label="Nom du projet" placeholder="Nom du projet" />
+        </div>
+        <p><label for="project-dir"><b>Répertoire :</b></label></p>
+        <div id="project-dir-container">
+          <input class="demo-input" id="project-dir" aria-label="Répertoire" placeholder="Répertoire" />
+          <button class="demo-button" id="select-directory">Changer</button>
+        </div>
+        <p>
+          <button class="demo-button" id="create-project">Créer</button>
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <script type="text/javascript">
+    require('./renderer-process/project/create');
+  </script>
+</template>

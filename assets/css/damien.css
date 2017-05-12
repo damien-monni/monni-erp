@@ -1,0 +1,7 @@
+#project-dir-container {
+  display: flex;
+}
+
+#project-dir-container input {
+  margin-right: 20px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/nativize.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/about.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="assets/css/section.css">
+  <link rel="stylesheet" href="assets/css/demo.css">
+  <link rel="stylesheet" href="assets/css/github.css">
+  <link rel="stylesheet" href="assets/css/damien.css">
+
+  <link rel="import" href="sections/about.html">
+  <link rel="import" href="sections/project/create.html">
+</head>
+<body>
+
+  <nav class="nav js-nav">
+    <header class="nav-header">
+      <h1 class="nav-title">Monni <strong>ERP</strong></h1>
+    </header>
+
+    <div class="nav-item u-category-project">
+      <h5 class="nav-category">
+        <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
+        Projet
+      </h5>
+      <button type="button" id="button-create" data-section="create" class="nav-button">Création</button>
+    </div>
+
+
+    <footer class="nav-footer">
+      <button type="button" id="button-about" data-modal="about" class="nav-footer-button">A propos</button>
+      <a class="nav-footer-logo" href="https://github.com" aria-label="Homepage">
+        © Damien Monni - 2017
+      </a>
+    </footer>
+  </nav>
+
+  <main class="content js-content"></main>
+
+  <script>
+    require('./assets/imports');
+    require('./assets/ex-links');
+    require('./assets/nav');
+    require('./assets/demo-btns');
+    require('./assets/code-blocks');
+    require('./assets/normalize-shortcuts');
+  </script>
+</body>
+</html>
