@@ -2,12 +2,13 @@ const path = require('path')
 const glob = require('glob')
 const electron = require('electron')
 const autoUpdater = require('./auto-updater')
-const argv = require('yargs').argv;
+const yargs = require('yargs');
 
 const BrowserWindow = electron.BrowserWindow
 const app = electron.app
 
-const debug = /--debug/.test(process.argv[2])
+const debug = /--debug/.test(process.argv[2]);
+const args = yargs(process.argv).alias('p', 'path').argv;
 
 if (process.mas) app.setName('Electron APIs')
 
@@ -36,18 +37,17 @@ function initialize () {
     mainWindow.loadURL(path.join('file://', __dirname, '/index.html'))
 
     // Launch fullscreen with DevTools open, usage: npm run debug
-    if (!debug) {
+    if (debug) {
       mainWindow.webContents.openDevTools()
       mainWindow.maximize()
       require('devtron').install()
     }
 
-    console.log(argv);
-
     // Handle the path argument
-    if (argv.path) {
+    const projectPath = args.path;
+    if (projectPath) {
       mainWindow.webContents.on('did-finish-load', () => {
-        mainWindow.webContents.send('path', argv.path);
+        mainWindow.webContents.send('path', projectPath);
       })
     }
 
