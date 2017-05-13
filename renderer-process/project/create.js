@@ -26,7 +26,7 @@ ipc.on('selected-directory', function (event, path) {
 })
 
 ipc.on('section-displayed', function (event, path) {
-  // TODO: Make it work
+  // It seems to work only when no debug tools
   projectNameInput.focus();
 })
 
