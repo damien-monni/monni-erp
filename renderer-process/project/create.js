@@ -4,6 +4,7 @@ const fs = require('fs');
 // Add a zero if n < 10
 function addZ(n) { return n < 10 ? '0' + n:'' + n; }
 
+const projectNameInput = document.getElementById('project-name');
 const projectDirInput = document.getElementById('project-dir');
 
 // fill the directory input if defined as an argument from shell
@@ -24,6 +25,12 @@ ipc.on('selected-directory', function (event, path) {
   projectDirInput.value = path;
 })
 
+ipc.on('section-displayed', function (event, path) {
+  // TODO: Make it work
+  projectNameInput.focus();
+})
+
+// Creating directories
 const createButton = document.getElementById('create-project');
 createButton.addEventListener('click', function (event) {
   // Build project name

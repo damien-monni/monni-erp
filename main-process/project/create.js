@@ -7,4 +7,8 @@ ipc.on('open-directory-dialog', function (event) {
   }, function (directory) {
     if (directory) event.sender.send('selected-directory', directory)
   })
-})
+});
+
+ipc.on('section-displayed', function (event) {
+  event.sender.send('section-displayed');
+});

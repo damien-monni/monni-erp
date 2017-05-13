@@ -1,4 +1,5 @@
-const settings = require('electron-settings')
+const settings = require('electron-settings');
+const ipc = require('electron').ipcRenderer;
 
 document.body.addEventListener('click', function (event) {
   if (event.target.dataset.section) {
@@ -23,6 +24,9 @@ function handleSectionTrigger (event) {
   // Save currently active button in localStorage
   const buttonId = event.target.getAttribute('id')
   settings.set('activeSectionButtonId', buttonId)
+
+  // Send an IPC event when a new section is displayed
+  ipc.send('section-displayed');
 }
 
 function activateDefaultSection () {
