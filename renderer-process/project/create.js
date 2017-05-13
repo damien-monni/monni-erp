@@ -30,9 +30,8 @@ ipc.on('section-displayed', function (event, path) {
   projectNameInput.focus();
 })
 
-// Creating directories
-const createButton = document.getElementById('create-project');
-createButton.addEventListener('click', function (event) {
+// Create directories
+const createDirs = () => {
   // Build project name
   const date = new Date();
   const year = date.getFullYear().toString().substr(-2);
@@ -49,4 +48,17 @@ createButton.addEventListener('click', function (event) {
   // Create the source folder
   const src = `C:\\Users\\Damien\\Documents\\src\\${name}`;
   fs.mkdirSync(src);
+}
+
+// Enter hit
+const formElement = document.getElementById('create-project-form');
+formElement.addEventListener('submit', (e) => {
+  e.preventDefault();
+  createDirs();
+})
+
+// Create button clicked
+const createButton = document.getElementById('create-project');
+createButton.addEventListener('click', function (event) {
+  createDirs();
 });

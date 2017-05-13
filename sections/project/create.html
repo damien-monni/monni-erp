@@ -14,18 +14,20 @@
 
     <div class="demo">
       <div class="demo-wrapper">
-        <div>
-          <p><label for="project-name"><b>Nom du projet :</b></label></p>
-          <input class="demo-input" id="project-name" aria-label="Nom du projet" placeholder="Nom du projet" />
-        </div>
-        <p><label for="project-dir"><b>Répertoire :</b></label></p>
-        <div id="project-dir-container">
-          <input class="demo-input" id="project-dir" aria-label="Répertoire" placeholder="Répertoire" />
-          <button class="demo-button" id="select-directory">Changer</button>
-        </div>
-        <p>
-          <button class="demo-button" id="create-project">Créer</button>
-        </p>
+        <form id="create-project-form">
+          <div>
+            <p><label for="project-name"><b>Nom du projet :</b></label></p>
+            <input class="demo-input" id="project-name" aria-label="Nom du projet" placeholder="Nom du projet" />
+          </div>
+          <p><label for="project-dir"><b>Répertoire :</b></label></p>
+          <div id="project-dir-container">
+            <input class="demo-input" id="project-dir" aria-label="Répertoire" placeholder="Répertoire" />
+            <button type="button" class="demo-button" id="select-directory">Changer</button>
+          </div>
+          <p>
+            <button type="submit" class="demo-button" id="create-project">Créer</button>
+          </p>
+        </form>
       </div>
     </div>
 
