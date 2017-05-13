@@ -5,3 +5,27 @@
 #project-dir-container input {
   margin-right: 20px;
 }
+
+body {
+  flex-direction: column;
+}
+
+#app-container {
+  margin: 0;
+  height: 100%;
+  display: flex;
+}
+
+#title-bar {
+  background-color: #71d0b0;
+  color: #444;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 15px;
+  -webkit-app-region: drag;
+}
+
+#title-bar #app-close {
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
